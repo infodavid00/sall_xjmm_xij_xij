@@ -1,0 +1,29 @@
+#signatureCanvas {
+ border-bottom: 1px solid black;
+ width: 100%;
+}
+
+#accreditation-signimage-sig-cont {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ flex-direction: row;
+}
+#accreditation-signimage-sig-cont-text {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#accredition-sign-clear-btn {
+ padding: 10px;
+ border:none;
+ outline: none;
+ border-radius: 5px;
+ cursor: pointer;
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ font-weight: 600;
+ margin-top: 0.6em;
+ transition: 0.2s;
+}
+#accredition-sign-clear-btn:hover {
+ background-color: tomato;
+ color: white;
+}

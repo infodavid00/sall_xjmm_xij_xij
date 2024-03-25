@@ -1,0 +1,97 @@
+
+#accredition-header {
+  margin-top: 1em;
+  width:100%;
+  padding:0;
+}
+#accreditation-container {
+ margin: auto;
+ margin-top: 2em;
+ width: 95%;
+}
+
+#accreditation-footer {
+ display: flex;
+ flex-direction: row;
+ gap: 1.5em;
+ justify-content: flex-end;
+ align-items: center;
+ margin-top: 5em;
+ margin-bottom: 3em;
+}
+#accreditation-footer button {
+ padding: 13px;
+ border: none;
+ outline: none;
+ border-radius: 5px;
+ cursor: pointer;
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ font-size: 15px;
+ transition: 0.1s;
+}
+#accreditation-footer button:hover {
+ font-weight: 800;
+}
+#accreditation-footer-next-btn {
+ background-color: dodgerblue;
+ color: white;
+}
+
+
+.accreditation-box-title {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.accreditation-box-title-text {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ font-size: 17px;
+ margin-bottom: 1.5em;
+}
+.accreditation-box-subbox {
+ margin-bottom: 2.3em;
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ font-size: 16px;
+}
+.accreditation-box-input-title {
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ font-weight: 600;
+ margin-bottom: 0.5em;
+}
+.accreditation-box-input-text {
+ font-size: 17px;
+ border:none;
+ outline: none;
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ border-bottom: 1px solid black;
+ width: 100%;
+}
+.accreditation-box-subbox-forcheck {
+ display: flex;
+ flex-direction: row;
+ gap: 0.5em;
+ align-items: center;
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ font-size: 16px;
+}
+.accreditation-box-subbox-sub-yesno {
+ margin-top: 0.4em;
+}
+.accreditation-box-title-text-b5 {
+  font-size: 19px;
+  font-weight: 600;
+}
+.accreditation-box-titlebox-input-title-light {
+  font-weight: 500;
+}
+
+
+@media (min-width:760px) { 
+ #accredition-header {
+   margin-top: 1.7em;
+ }
+ #accredition-header img {
+   margin-left: 1em;
+ }
+ #accreditation-container {
+   width: 50%;
+ }
+}
