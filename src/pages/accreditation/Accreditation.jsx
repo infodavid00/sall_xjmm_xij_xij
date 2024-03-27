@@ -390,7 +390,7 @@ function Board6({ shouldHide, btnclicknext, btnclickprevious,setFM }) {
         onSignatureChange={handleSignatureChange} 
         onDateChange={handleDateChange} 
       />
-      <BottomTab useContinue={false} next={handleFormSubmit} previous={btnclickprevious} show={date && inputs.signature ? true : false} />
+      <BottomTab useContinue={false} next={handleFormSubmit} previous={btnclickprevious} show={date ? true : false} />
     </div>
   );
 }
