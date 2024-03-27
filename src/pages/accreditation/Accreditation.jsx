@@ -36,17 +36,17 @@ function Board1({shouldHide, btnclicknext, btnclickprevious,setFM}) {
       <h1 className='accreditation-box-title'>Personal Information</h1>
       <div className='accreditation-box-subbox'>
         <div className='accreditation-box-input-title'>Full Name</div>
-        <input type="text" name="fullName" className='accreditation-box-input-text' value={formData.fullName} onChange={handleInputChange} />
+        <input type="text" required={true} name="fullName" className='accreditation-box-input-text' value={formData.fullName} onChange={handleInputChange} />
       </div>
       <div className='accreditation-box-subbox'>
         <div className='accreditation-box-input-title'>Date of Birth</div>
-        <input type="date" name="dateOfBirth" className='accreditation-box-input-text' value={formData.dateOfBirth} onChange={handleInputChange} />
+        <input type="date" required={true} name="dateOfBirth" className='accreditation-box-input-text' value={formData.dateOfBirth} onChange={handleInputChange} />
       </div>
       <div className='accreditation-box-subbox'>
         <div className='accreditation-box-input-title'>Contact Information (Email)</div>
-        <input type="email" name="email" className='accreditation-box-input-text' value={formData.email} onChange={handleInputChange} />
+        <input type="email"  required={true} name="email" className='accreditation-box-input-text' value={formData.email} onChange={handleInputChange} />
       </div>
-      <BottomTab useContinue={false} next={handleFormSubmit} previous={btnclickprevious} />
+      <BottomTab useContinue={false} next={handleFormSubmit} previous={btnclickprevious} show={formData.fullName && formData.email && formData.dateOfBirth ? true : false} />
     </div>
   );
 }
@@ -104,7 +104,7 @@ function Board2({shouldHide, btnclicknext, btnclickprevious,setFM}) {
         </label>
         <div>I have professional experience in financial matters.</div>
       </div>
-      <BottomTab useContinue={false} next={handleFormSubmit} previous={btnclickprevious} />
+      <BottomTab useContinue={false} next={handleFormSubmit} previous={btnclickprevious} show={true}/>
     </div>
   );
 }
@@ -142,6 +142,7 @@ function Board3({ shouldHide, btnclicknext, btnclickprevious,setFM }) {
             id='preference1-1'
             name='preference1'
             value='yes'
+            required={true}
             onChange={handleInputChange}
           />
           <label htmlFor='preference1-1'>Yes</label>
@@ -150,6 +151,7 @@ function Board3({ shouldHide, btnclicknext, btnclickprevious,setFM }) {
             id='preference1-2'
             name='preference1'
             value='no'
+            required={true}
             onChange={handleInputChange}
           />
           <label htmlFor='preference1-2'>No</label>
@@ -166,6 +168,7 @@ function Board3({ shouldHide, btnclicknext, btnclickprevious,setFM }) {
             id='preference2-1'
             name='preference2'
             value='yes'
+            required={true}
             onChange={handleInputChange}
           />
           <label htmlFor='preference2-1'>Yes</label>
@@ -174,6 +177,7 @@ function Board3({ shouldHide, btnclicknext, btnclickprevious,setFM }) {
             id='preference2-2'
             name='preference2'
             value='no'
+            required={true}
             onChange={handleInputChange}
           />
           <label htmlFor='preference2-2'>No</label>
@@ -191,6 +195,7 @@ function Board3({ shouldHide, btnclicknext, btnclickprevious,setFM }) {
             id='preference3-1'
             name='preference3'
             value='yes'
+            required={true}
             onChange={handleInputChange}
           />
           <label htmlFor='preference3-1'>Yes</label>
@@ -199,6 +204,7 @@ function Board3({ shouldHide, btnclicknext, btnclickprevious,setFM }) {
             id='preference3-2'
             name='preference3'
             value='no'
+            required={true}
             onChange={handleInputChange}
           />
           <label htmlFor='preference3-2'>No</label>
@@ -219,6 +225,7 @@ function Board3({ shouldHide, btnclicknext, btnclickprevious,setFM }) {
         useContinue={false}
         next={handleFormSubmit}
         previous={btnclickprevious}
+        show={inputs.preference1 && inputs.preference2 && inputs.preference3 ? true : false}
       />
     </div>
   );
@@ -247,12 +254,14 @@ function Board4({ shouldHide, btnclicknext, btnclickprevious,setFM }) {
           className='accreditation-box-input-text'
           value={input.investmentExperience}
           onChange={handleInputChange}
+          required={true}
         />
       </div>
       <BottomTab
         useContinue={false}
         next={handleFormSubmit}
         previous={btnclickprevious}
+        show={input.investmentExperience ? true : false}
       />
     </div>
   );
@@ -286,7 +295,7 @@ function Board5({ shouldHide, btnclicknext, btnclickprevious,setFM }) {
         <div className='accreditation-box-title-text accreditation-box-title-text-b5'>Investment Objectives:</div>
         <div className='accreditation-box-subbox'>
           <div className='accreditation-box-input-title accreditation-box-titlebox-input-title-light'>What are your primary investment goals? (e.g., capital preservation, growth, income)</div>
-          <input type="text" className='accreditation-box-input-text' value={investmentGoals} onChange={(e) => setInvestmentGoals(e.target.value)} />
+          <input type="text" required={true} className='accreditation-box-input-text' value={investmentGoals} onChange={(e) => setInvestmentGoals(e.target.value)} />
         </div>
       </div>
 
@@ -295,7 +304,7 @@ function Board5({ shouldHide, btnclicknext, btnclickprevious,setFM }) {
         <div className='accreditation-box-title-text accreditation-box-title-text-b5'>Risk Tolerance:</div>
         <div className='accreditation-box-subbox'>
           <div className='accreditation-box-input-title accreditation-box-titlebox-input-title-light'>On a scale of 1 to 10 (1 being very conservative and 10 being highly aggressive), where do you place your risk tolerance?</div>
-          <input type="number" maxLength={10} max={10} className='accreditation-box-input-text' value={riskTolerance} onChange={(e) => setRiskTolerance(e.target.value)} />
+          <input type="number" required={true} maxLength={10} max={10} className='accreditation-box-input-text' value={riskTolerance} onChange={(e) => setRiskTolerance(e.target.value)} />
         </div>
       </div>
 
@@ -304,7 +313,7 @@ function Board5({ shouldHide, btnclicknext, btnclickprevious,setFM }) {
         <div className='accreditation-box-title-text accreditation-box-title-text-b5'>Investment Horizon:</div>
         <div className='accreditation-box-subbox'>
           <div className='accreditation-box-input-title accreditation-box-titlebox-input-title-light'>How long do you intend to hold your investments? (e.g., short-term, medium-term, long-term)</div>
-          <input type="text" className='accreditation-box-input-text' value={investmentHorizon} onChange={(e) => setInvestmentHorizon(e.target.value)} />
+          <input type="text" required={true} className='accreditation-box-input-text' value={investmentHorizon} onChange={(e) => setInvestmentHorizon(e.target.value)} />
         </div>
       </div>
 
@@ -313,7 +322,7 @@ function Board5({ shouldHide, btnclicknext, btnclickprevious,setFM }) {
         <div className='accreditation-box-title-text accreditation-box-title-text-b5'>Sector Preferences:</div>
         <div className='accreditation-box-subbox'>
           <div className='accreditation-box-input-title accreditation-box-titlebox-input-title-light'>Are there specific sectors or industries you are interested in? (e.g., technology, real estate, healthcare)</div>
-          <input type="text" className='accreditation-box-input-text' value={sectorPreferences} onChange={(e) => setSectorPreferences(e.target.value)} />
+          <input type="text" required={true} className='accreditation-box-input-text' value={sectorPreferences} onChange={(e) => setSectorPreferences(e.target.value)} />
         </div>
       </div>
 
@@ -350,7 +359,7 @@ function Board5({ shouldHide, btnclicknext, btnclickprevious,setFM }) {
           <div>Other (please specify): <input type="text" className='accreditation-box-input-text' value={otherSource} onChange={(e) => setOtherSource(e.target.value)} /> </div>
         </div>
       </div>
-      <BottomTab useContinue={false} next={handleFormSubmit} previous={btnclickprevious} />
+      <BottomTab useContinue={false} next={handleFormSubmit} previous={btnclickprevious} show={inputs.investmentGoals && inputs.riskTolerance && inputs.investmentHorizon && inputs.sectorPreferences && inputs.sourceOfFunds ? true : false} />
     </div>
   );
 }
@@ -377,13 +386,11 @@ function Board6({ shouldHide, btnclicknext, btnclickprevious,setFM }) {
     <div style={styles}>
       <h1 className='accreditation-box-title'>Certification</h1>
       <div className='accreditation-box-title-text'>By signing below, I certify that the information provided in this questionnaire is accurate and complete to the best of my knowledge. I understand that any material misstatements or omissions may constitute grounds for disqualification.</div>
-      <div>
       <SignaturePanel 
         onSignatureChange={handleSignatureChange} 
         onDateChange={handleDateChange} 
       />
-      </div>
-      <BottomTab useContinue={false} next={handleFormSubmit} previous={btnclickprevious} />
+      <BottomTab useContinue={false} next={handleFormSubmit} previous={btnclickprevious} show={date && inputs.signature ? true : false} />
     </div>
   );
 }
@@ -419,7 +426,7 @@ async function sendToDB() {
       <>
       <h1 className='accreditation-box-title'>Disclaimer</h1>
       <div className='accreditation-box-title-text'>Remember that this questionnaire is intended for informational purposes only and should not be considered legal advice. Always consult with legal professionals to ensure compliance with relevant regulations and tailor the document to your specific circumstances. Review carefully and use at your own risk.</div>
-      <BottomTab useContinue={true} next={sendToDB} previous={btnclickprevious} />
+      <BottomTab useContinue={true} next={sendToDB} previous={btnclickprevious} show={true} />
       </> ) :
       <div style={{position:'fixed',top:0,left:0,right:0,bottom:0,zIndex:5,backgroundColor:'rgba(10,10,10,0.5)'}}></div>
       }
@@ -431,7 +438,7 @@ async function sendToDB() {
 
 
 
-function BottomTab({useContinue,next,previous}) {
+function BottomTab({useContinue,next,previous,show}) {
  const handleClick = () => {
     next();
     // console.log(next)
@@ -439,7 +446,7 @@ function BottomTab({useContinue,next,previous}) {
  return (
     <div id='accreditation-footer'>
       <button onClick={previous}>PREVIOUS</button>
-      <button id='accreditation-footer-next-btn' onClick={handleClick}>{useContinue === true ? 'CONTINUE' : 'NEXT'}</button>
+      {show && <button id='accreditation-footer-next-btn' onClick={handleClick}>{useContinue === true ? 'CONTINUE' : 'NEXT'}</button>}
     </div>
  )
 }

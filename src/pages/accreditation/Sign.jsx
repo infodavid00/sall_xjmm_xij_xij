@@ -21,15 +21,17 @@ function SignaturePanel({ onSignatureChange, onDateChange }) {
   };
 
   return (
-    <div id='accreditation-signimage-sig-cont'>
-      <div>
+    <div>
       <h3 id='accreditation-signimage-sig-cont-text'>Signature:</h3>
+      <br/> <br />
       <SignaturePad onSave={handleSave} />
-      </div>
+      <br /> 
+      <br />
       <div className='accreditation-box-subbox'>
         <div className='accreditation-box-input-title'>Date</div>
         <input 
-          type="date" 
+          type="date"  
+          required={true}
           className='accreditation-box-input-text'
           value={date}
           onChange={handleDateChange}
