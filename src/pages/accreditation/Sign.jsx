@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import SignaturePadExample from './SignatureCanvas';
+import SignaturePad from './SignatureCanvas';
 import './signaturecanvas.css';
-// import './accreditation.css';
+import './accreditation.css';
 
 function SignaturePanel({ onSignatureChange, onDateChange }) {
   const [signature, setSignature] = useState(null);
@@ -21,12 +21,12 @@ function SignaturePanel({ onSignatureChange, onDateChange }) {
   };
 
   return (
-    <>
-    {/* //   <h3 id='accreditation-signimage-sig-cont-text'>Signature:</h3>
-    //   <br/> <br /> */}
-      <SignaturePadExample onSave={handleSave} />
-      {/* // <br /> 
-      // <br /> */}
+    <div>
+      <h3 id='accreditation-signimage-sig-cont-text'>Signature:</h3>
+      <br/> <br />
+      <SignaturePad onSave={handleSave} />
+      <br /> 
+      <br />
       <div className='accreditation-box-subbox'>
         <div className='accreditation-box-input-title'>Date</div>
         <input 
@@ -37,7 +37,7 @@ function SignaturePanel({ onSignatureChange, onDateChange }) {
           onChange={handleDateChange}
         />
       </div>
-    </>
+    </div>
   );
 }
 
