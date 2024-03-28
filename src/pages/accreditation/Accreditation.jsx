@@ -446,7 +446,7 @@ function BottomTab({useContinue,next,previous,show}) {
  return (
     <div id='accreditation-footer'>
       <button onClick={previous}>PREVIOUS</button>
-     <button id='accreditation-footer-next-btn' onClick={handleClick}>{useContinue === true ? 'CONTINUE' : 'NEXT'}</button>
+     {/* <button id='accreditation-footer-next-btn' onClick={handleClick}>{useContinue === true ? 'CONTINUE' : 'NEXT'}</button> */}
       {show && <button id='accreditation-footer-next-btn' onClick={handleClick}>{useContinue === true ? 'CONTINUE' : 'NEXT'}</button>}
     </div>
  )
