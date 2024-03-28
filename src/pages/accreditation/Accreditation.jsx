@@ -446,6 +446,7 @@ function BottomTab({useContinue,next,previous,show}) {
  return (
     <div id='accreditation-footer'>
       <button onClick={previous}>PREVIOUS</button>
+     <button id='accreditation-footer-next-btn' onClick={handleClick}>{useContinue === true ? 'CONTINUE' : 'NEXT'}</button>
       {show && <button id='accreditation-footer-next-btn' onClick={handleClick}>{useContinue === true ? 'CONTINUE' : 'NEXT'}</button>}
     </div>
  )
@@ -475,7 +476,7 @@ function Container() {
       <Board3 shouldHide={currentTab === '3' ? false : true} btnclicknext={()=> setcurrentTab('4')} btnclickprevious={()=> setcurrentTab('2')} setFM={setformData3} />
       <Board4 shouldHide={currentTab === '4' ? false : true} btnclicknext={()=> setcurrentTab('5')} btnclickprevious={()=> setcurrentTab('3')} setFM={setformData4} />
       <Board5 shouldHide={currentTab === '5' ? false : true} btnclicknext={()=> setcurrentTab('6')} btnclickprevious={()=> setcurrentTab('4')} setFM={setformData5} />
-      <Board6 shouldHide={currentTab === '6' ? false : true} btnclicknext={()=> setcurrentTab('7')} btnclickprevious={()=> setcurrentTab('5')} setFM={setformData6} />
+      {currentTab === '6' ? <Board6 shouldHide={currentTab === '6' ? false : true} btnclicknext={()=> setcurrentTab('7')} btnclickprevious={()=> setcurrentTab('5')} setFM={setformData6} /> : ''}
       <Board7 shouldHide={currentTab === '7' ? false : true} btnclicknext={()=> setcurrentTab('')} btnclickprevious={()=> setcurrentTab('6')}  form={FORM}  />
     </div>
  )

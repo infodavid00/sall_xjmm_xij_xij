@@ -1,9 +1,14 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import SignatureCanvas from 'react-signature-canvas';
 import './signaturecanvas.css';
 
 const SignaturePad = ({ onSave }) => {
+  const [isCanvasMounted, setIsCanvasMounted] = useState(false);
   const sigCanvas = useRef(null);
+
+  useEffect(() => {
+    setIsCanvasMounted(true);
+  }, []);
 
   const clearCanvas = () => {
     sigCanvas.current.clear();
@@ -12,13 +17,17 @@ const SignaturePad = ({ onSave }) => {
 
   return (
     <div>
-      <SignatureCanvas
-        ref={sigCanvas}
-        canvasProps={{ id: 'signatureCanvas' }}
-        onEnd={() => onSave(sigCanvas.current.toDataURL())}
-      />
-      <br />
-      <button onClick={clearCanvas} id='accredition-sign-clear-btn'>Clear Signature</button>
+      {isCanvasMounted && (
+        <>
+          <SignatureCanvas
+            ref={sigCanvas}
+            canvasProps={{ id: 'signatureCanvas' }}
+            onEnd={() => onSave(sigCanvas.current.toDataURL())}
+          />
+          <br />
+          <button onClick={clearCanvas} id='accredition-sign-clear-btn'>Clear Signature</button>
+        </>
+      )}
     </div>
   );
 };
