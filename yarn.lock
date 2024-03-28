@@ -10639,6 +10639,11 @@ react-signature-canvas@^1.0.6:
     signature_pad "^2.3.2"
     trim-canvas "^0.1.0"
 
+react-signature-pad@^0.0.6:
+  version "0.0.6"
+  resolved "https://registry.npmjs.org/react-signature-pad/-/react-signature-pad-0.0.6.tgz"
+  integrity sha512-eAb9n2PH2mRhxQOFtHdE0/beFqCPFMXindwlbN721g6TKswTB/59kQKnSWPxqqZbq7iromF+7jxkm7yhqhLfsA==
+
 react@^18.2.0:
   version "18.2.0"
   resolved "https://registry.npmjs.org/react/-/react-18.2.0.tgz"

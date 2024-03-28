@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import SignaturePad from './SignatureCanvas';
+import SignaturePadExample from './SignatureCanvas';
 import './signaturecanvas.css';
 // import './accreditation.css';
 
@@ -24,7 +24,7 @@ function SignaturePanel({ onSignatureChange, onDateChange }) {
     <>
     {/* //   <h3 id='accreditation-signimage-sig-cont-text'>Signature:</h3>
     //   <br/> <br /> */}
-      <SignaturePad onSave={handleSave} />
+      <SignaturePadExample onSave={handleSave} />
       {/* // <br /> 
       // <br /> */}
       <div className='accreditation-box-subbox'>
