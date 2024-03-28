@@ -11,15 +11,14 @@ const SignaturePad = ({ onSave }) => {
   };
 
   return (
-    <div>
+    <>
       <SignatureCanvas
         ref={sigCanvas}
         canvasProps={{ id: 'signatureCanvas' }}
         onEnd={() => onSave(sigCanvas.current.toDataURL())}
       />
-      <br />
       <button onClick={clearCanvas} id='accredition-sign-clear-btn'>Clear Signature</button>
-    </div>
+    </>
   );
 };
 

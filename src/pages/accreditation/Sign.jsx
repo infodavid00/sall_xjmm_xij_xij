@@ -21,12 +21,12 @@ function SignaturePanel({ onSignatureChange, onDateChange }) {
   };
 
   return (
-    <div>
-      <h3 id='accreditation-signimage-sig-cont-text'>Signature:</h3>
-      <br/> <br />
+    <>
+    {/* //   <h3 id='accreditation-signimage-sig-cont-text'>Signature:</h3>
+    //   <br/> <br /> */}
       <SignaturePad onSave={handleSave} />
-      <br /> 
-      <br />
+      {/* // <br /> 
+      // <br /> */}
       <div className='accreditation-box-subbox'>
         <div className='accreditation-box-input-title'>Date</div>
         <input 
@@ -37,7 +37,7 @@ function SignaturePanel({ onSignatureChange, onDateChange }) {
           onChange={handleDateChange}
         />
       </div>
-    </div>
+    </>
   );
 }
 
